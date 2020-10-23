@@ -9,7 +9,7 @@ package spinnaker.execution.pipelines.before
 
 deny["Every pipeline github trigger must have a secret"] {
 	some i
-    trigger := input.triggers[i]
+    trigger := input.pipeline.triggers[i]
 	trigger.type == "git"
     trigger.source == "github"
     object.get(trigger, "secret", "") == ""
