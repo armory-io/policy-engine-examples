@@ -1,0 +1,16 @@
+name: Test Policies
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: Test All Policies
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Codebase
+      uses: actions/checkout@v2
+    - name: Test Policies
+      uses: petroprotsakh/opa-test-action@v2.1
+
+    
